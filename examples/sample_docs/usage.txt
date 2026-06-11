@@ -1,0 +1,1 @@
+Create a RAGPipeline, call ingest() to load your documents, then call query() to ask questions. The pipeline handles chunking, embedding, storage, retrieval, and generation.

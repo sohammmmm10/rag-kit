@@ -1,0 +1,1 @@
+Install rag-kit with pip: pip install rag-kit. For OpenAI support: pip install rag-kit[openai]. For PDF support: pip install rag-kit[pdf].

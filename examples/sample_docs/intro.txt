@@ -1,0 +1,1 @@
+rag-kit is a plug-and-play RAG pipeline library for Python. It lets you load, chunk, embed, store, retrieve, and generate all in one clean API.
