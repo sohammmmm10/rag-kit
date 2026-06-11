@@ -1,4 +1,4 @@
-"""Embedding providers for rag-kit."""
+"""Embedding providers for rag-bridge-kit."""
 
 from .base import BaseEmbedder
 from .default_embedder import DefaultEmbedder

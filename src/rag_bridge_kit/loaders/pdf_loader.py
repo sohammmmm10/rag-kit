@@ -12,7 +12,7 @@ from .base import BaseLoader
 class PDFLoader(BaseLoader):
     """Load documents from PDF files.
 
-    Requires: ``pip install rag-kit[pdf]``
+    Requires: ``pip install rag-bridge-kit[pdf]``
     """
 
     def __init__(
@@ -31,7 +31,7 @@ class PDFLoader(BaseLoader):
             from PyPDF2 import PdfReader  # type: ignore[import-untyped]
         except ImportError as exc:
             raise DependencyError(
-                "PyPDF2 is required for PDFLoader. Install with: pip install rag-kit[pdf]"
+                "PyPDF2 is required for PDFLoader. Install with: pip install rag-bridge-kit[pdf]"
             ) from exc
 
         if not self.path.exists():

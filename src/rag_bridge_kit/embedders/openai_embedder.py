@@ -16,7 +16,7 @@ _KNOWN_MODELS: dict[str, int] = {
 class OpenAIEmbedder(BaseEmbedder):
     """Generate embeddings using OpenAI's API.
 
-    Requires: ``pip install rag-kit[openai]``
+    Requires: ``pip install rag-bridge-kit[openai]``
 
     Parameters
     ----------
@@ -40,7 +40,7 @@ class OpenAIEmbedder(BaseEmbedder):
         except ImportError as exc:
             raise DependencyError(
                 "openai is required for OpenAIEmbedder. "
-                "Install with: pip install rag-kit[openai]"
+                "Install with: pip install rag-bridge-kit[openai]"
             ) from exc
 
         self._client = openai.OpenAI(api_key=api_key)

@@ -1,8 +1,8 @@
-# Release Process for rag-kit
+# Release Process for rag-bridge-kit
 
 ## 1. Update version
 
-Edit `pyproject.toml` and `src/rag_kit/__init__.py`:
+Edit `pyproject.toml` and `src/rag_bridge_kit/__init__.py`:
 
 ```
 version = "0.2.0"
@@ -26,7 +26,7 @@ python -m build
 
 ```bash
 twine upload --repository testpypi dist/*
-pip install --index-url https://test.pypi.org/simple/ rag-kit
+pip install --index-url https://test.pypi.org/simple/ rag-bridge-kit
 ```
 
 ## 5. Publish to PyPI

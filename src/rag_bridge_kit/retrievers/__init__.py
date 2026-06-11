@@ -1,4 +1,4 @@
-"""Retrievers for rag-kit."""
+"""Retrievers for rag-bridge-kit."""
 
 from .base import BaseRetriever
 from .similarity_retriever import SimilarityRetriever

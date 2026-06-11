@@ -1,16 +1,16 @@
-# rag-kit
+# rag-bridge-kit
 
-`rag-kit` is a plug-and-play **Retrieval Augmented Generation** pipeline library for Python.
+`rag-bridge-kit` is a plug-and-play **Retrieval Augmented Generation** pipeline library for Python.
 
-Load, chunk, embed, store, retrieve, and generate — all in one clean API.
+Load, chunk, embed, store, retrieve, and generate â€” all in one clean API.
 
 ## Why rag-kit?
 
-- **Zero config** — works out of the box with sensible defaults.
-- **Modular** — swap any component (loader, chunker, embedder, store, generator).
-- **Lightweight** — no heavy dependencies by default.
-- **Production-ready** — batch embedding, error handling, type hints everywhere.
-- **Extensible** — bring your own components by extending base classes.
+- **Zero config** â€” works out of the box with sensible defaults.
+- **Modular** â€” swap any component (loader, chunker, embedder, store, generator).
+- **Lightweight** â€” no heavy dependencies by default.
+- **Production-ready** â€” batch embedding, error handling, type hints everywhere.
+- **Extensible** â€” bring your own components by extending base classes.
 
 ## Install
 
@@ -57,7 +57,7 @@ pip install -e ".[dev,all]"
 ## Quick Start
 
 ```python
-from rag_kit import RAGPipeline
+from rag_bridge_kit import RAGPipeline
 
 pipeline = RAGPipeline()
 
@@ -77,8 +77,8 @@ print(f"Chunks retrieved: {len(result.retrieved_chunks)}")
 ## Load from Files
 
 ```python
-from rag_kit import RAGPipeline
-from rag_kit.loaders import TextLoader
+from rag_bridge_kit import RAGPipeline
+from rag_bridge_kit.loaders import TextLoader
 
 pipeline = RAGPipeline(loader=TextLoader("docs/"))
 stats = pipeline.ingest()
@@ -91,8 +91,8 @@ print(result.answer)
 ## Load PDFs
 
 ```python
-from rag_kit import RAGPipeline
-from rag_kit.loaders import PDFLoader
+from rag_bridge_kit import RAGPipeline
+from rag_bridge_kit.loaders import PDFLoader
 
 pipeline = RAGPipeline(loader=PDFLoader("reports/"))
 pipeline.ingest()
@@ -102,8 +102,8 @@ result = pipeline.query("What were Q4 earnings?")
 ## Load CSVs
 
 ```python
-from rag_kit import RAGPipeline
-from rag_kit.loaders import CSVLoader
+from rag_bridge_kit import RAGPipeline
+from rag_bridge_kit.loaders import CSVLoader
 
 pipeline = RAGPipeline(
     loader=CSVLoader("faq.csv", content_columns=["question", "answer"])
@@ -115,8 +115,8 @@ result = pipeline.query("How do I reset my password?")
 ## Load Markdown (split by headings)
 
 ```python
-from rag_kit import RAGPipeline
-from rag_kit.loaders import MarkdownLoader
+from rag_bridge_kit import RAGPipeline
+from rag_bridge_kit.loaders import MarkdownLoader
 
 pipeline = RAGPipeline(
     loader=MarkdownLoader("docs/", split_by_heading=True, heading_level=2)
@@ -128,8 +128,8 @@ result = pipeline.query("How to install?")
 ## Choose Your Chunking Strategy
 
 ```python
-from rag_kit import RAGPipeline
-from rag_kit.chunkers import FixedChunker, SentenceChunker, RecursiveChunker
+from rag_bridge_kit import RAGPipeline
+from rag_bridge_kit.chunkers import FixedChunker, SentenceChunker, RecursiveChunker
 
 # Fixed-size character chunks
 pipeline = RAGPipeline(chunker=FixedChunker(chunk_size=512, chunk_overlap=64))
@@ -145,9 +145,9 @@ pipeline = RAGPipeline(chunker=RecursiveChunker(chunk_size=512, chunk_overlap=64
 
 ```python
 import os
-from rag_kit import RAGPipeline
-from rag_kit.embedders import OpenAIEmbedder
-from rag_kit.generators import OpenAIGenerator
+from rag_bridge_kit import RAGPipeline
+from rag_bridge_kit.embedders import OpenAIEmbedder
+from rag_bridge_kit.generators import OpenAIGenerator
 
 api_key = os.environ["OPENAI_API_KEY"]
 
@@ -164,8 +164,8 @@ print(result.answer)
 ## Use Local Embeddings (SentenceTransformers)
 
 ```python
-from rag_kit import RAGPipeline
-from rag_kit.embedders import SentenceTransformerEmbedder
+from rag_bridge_kit import RAGPipeline
+from rag_bridge_kit.embedders import SentenceTransformerEmbedder
 
 pipeline = RAGPipeline(
     embedder=SentenceTransformerEmbedder(model_name="all-MiniLM-L6-v2"),
@@ -178,8 +178,8 @@ result = pipeline.query("Your question?")
 ## Persistent Storage with ChromaDB
 
 ```python
-from rag_kit import RAGPipeline
-from rag_kit.stores import ChromaStore
+from rag_bridge_kit import RAGPipeline
+from rag_bridge_kit.stores import ChromaStore
 
 pipeline = RAGPipeline(
     store=ChromaStore(collection_name="my-docs", persist_directory="./chroma_db"),
@@ -204,36 +204,36 @@ for chunk in chunks:
 ## Architecture
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│                     RAGPipeline                         │
-├─────────────────────────────────────────────────────────┤
-│                                                         │
-│  INGEST:   Loader → Chunker → Embedder → Store          │
-│                                                         │
-│  QUERY:    Embedder → Store (search) → Generator         │
-│                                                         │
-├─────────────────────────────────────────────────────────┤
-│  Loaders:    TextLoader, PDFLoader, CSVLoader,           │
-│              MarkdownLoader                              │
-│                                                         │
-│  Chunkers:   FixedChunker, SentenceChunker,              │
-│              RecursiveChunker                             │
-│                                                         │
-│  Embedders:  DefaultEmbedder, OpenAIEmbedder,            │
-│              SentenceTransformerEmbedder                  │
-│                                                         │
-│  Stores:     MemoryStore, ChromaStore                     │
-│                                                         │
-│  Generators: DefaultGenerator, OpenAIGenerator            │
-└─────────────────────────────────────────────────────────┘
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚                     RAGPipeline                         â”‚
+â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤
+â”‚                                                         â”‚
+â”‚  INGEST:   Loader â†’ Chunker â†’ Embedder â†’ Store          â”‚
+â”‚                                                         â”‚
+â”‚  QUERY:    Embedder â†’ Store (search) â†’ Generator         â”‚
+â”‚                                                         â”‚
+â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤
+â”‚  Loaders:    TextLoader, PDFLoader, CSVLoader,           â”‚
+â”‚              MarkdownLoader                              â”‚
+â”‚                                                         â”‚
+â”‚  Chunkers:   FixedChunker, SentenceChunker,              â”‚
+â”‚              RecursiveChunker                             â”‚
+â”‚                                                         â”‚
+â”‚  Embedders:  DefaultEmbedder, OpenAIEmbedder,            â”‚
+â”‚              SentenceTransformerEmbedder                  â”‚
+â”‚                                                         â”‚
+â”‚  Stores:     MemoryStore, ChromaStore                     â”‚
+â”‚                                                         â”‚
+â”‚  Generators: DefaultGenerator, OpenAIGenerator            â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 ```
 
 ## CLI
 
 ```bash
-rag-kit info
-rag-kit ingest ./docs --glob "*.txt"
-rag-kit query ./docs -q "What is RAG?" --top-k 3
+rag-bridge-kit info
+rag-bridge-kit ingest ./docs --glob "*.txt"
+rag-bridge-kit query ./docs -q "What is RAG?" --top-k 3
 ```
 
 ## Environment Variables

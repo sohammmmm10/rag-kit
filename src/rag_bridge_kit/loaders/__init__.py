@@ -1,4 +1,4 @@
-"""Document loaders for rag-kit."""
+"""Document loaders for rag-bridge-kit."""
 
 from .base import BaseLoader
 from .csv_loader import CSVLoader

@@ -1,4 +1,4 @@
-"""Text chunkers for rag-kit."""
+"""Text chunkers for rag-bridge-kit."""
 
 from .base import BaseChunker
 from .fixed_chunker import FixedChunker

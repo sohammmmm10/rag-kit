@@ -3,9 +3,9 @@ requires = ["hatchling>=1.25.0"]
 build-backend = "hatchling.build"
 
 [project]
-name = "rag-kit"
+name = "rag-bridge-kit"
 version = "0.1.0"
-description = "Plug-and-play RAG pipeline library for Python. Load, chunk, embed, store, retrieve, and generate — all in one clean API."
+description = "Plug-and-play RAG pipeline library for Python. Load, chunk, embed, store, retrieve, and generate â€” all in one clean API."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
@@ -54,7 +54,7 @@ dev = [
 ]
 
 [project.scripts]
-rag-kit = "rag_kit.cli:main"
+rag-bridge-kit = "rag_bridge_kit.cli:main"
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]
@@ -62,7 +62,7 @@ testpaths = ["tests"]
 addopts = "-q"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/rag_kit"]
+packages = ["src/rag_bridge_kit"]
 
 [tool.hatch.build.targets.sdist]
 include = [

@@ -1,8 +1,8 @@
-"""Tests for rag_kit embedders."""
+"""Tests for rag_bridge_kit embedders."""
 
 import math
 
-from rag_kit.embedders import DefaultEmbedder
+from rag_bridge_kit.embedders import DefaultEmbedder
 
 
 class TestDefaultEmbedder:

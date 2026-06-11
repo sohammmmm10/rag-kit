@@ -1,10 +1,10 @@
-"""Tests for rag_kit chunkers."""
+"""Tests for rag_bridge_kit chunkers."""
 
 import pytest
 
-from rag_kit.chunkers import FixedChunker, RecursiveChunker, SentenceChunker
-from rag_kit.errors import ValidationError
-from rag_kit.models import Document
+from rag_bridge_kit.chunkers import FixedChunker, RecursiveChunker, SentenceChunker
+from rag_bridge_kit.errors import ValidationError
+from rag_bridge_kit.models import Document
 
 
 @pytest.fixture

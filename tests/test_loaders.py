@@ -1,11 +1,11 @@
-"""Tests for rag_kit loaders."""
+"""Tests for rag_bridge_kit loaders."""
 
 import csv
 import pytest
 from pathlib import Path
 
-from rag_kit.errors import LoaderError, ValidationError
-from rag_kit.loaders import TextLoader, CSVLoader, MarkdownLoader
+from rag_bridge_kit.errors import LoaderError, ValidationError
+from rag_bridge_kit.loaders import TextLoader, CSVLoader, MarkdownLoader
 
 
 @pytest.fixture

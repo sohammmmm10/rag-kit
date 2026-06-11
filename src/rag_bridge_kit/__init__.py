@@ -1,4 +1,4 @@
-"""rag-kit: Plug-and-play RAG pipeline library for Python."""
+"""rag-bridge-kit: Plug-and-play RAG pipeline library for Python."""
 
 __version__ = "0.1.0"
 

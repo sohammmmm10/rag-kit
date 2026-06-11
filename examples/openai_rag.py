@@ -7,11 +7,11 @@ Requires:
 
 import os
 
-from rag_kit import RAGPipeline
-from rag_kit.chunkers import SentenceChunker
-from rag_kit.embedders import OpenAIEmbedder
-from rag_kit.generators import OpenAIGenerator
-from rag_kit.stores import MemoryStore
+from rag_bridge_kit import RAGPipeline
+from rag_bridge_kit.chunkers import SentenceChunker
+from rag_bridge_kit.embedders import OpenAIEmbedder
+from rag_bridge_kit.generators import OpenAIGenerator
+from rag_bridge_kit.stores import MemoryStore
 
 # Setup OpenAI components
 api_key = os.environ["OPENAI_API_KEY"]

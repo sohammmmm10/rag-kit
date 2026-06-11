@@ -1,4 +1,4 @@
-"""RAG Pipeline — the main entry point for rag-kit."""
+"""RAG Pipeline â€” the main entry point for rag-bridge-kit."""
 
 from __future__ import annotations
 

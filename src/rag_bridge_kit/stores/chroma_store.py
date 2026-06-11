@@ -12,7 +12,7 @@ from .base import BaseStore
 class ChromaStore(BaseStore):
     """Vector store backed by ChromaDB.
 
-    Requires: ``pip install rag-kit[chromadb]``
+    Requires: ``pip install rag-bridge-kit[chromadb]``
 
     Parameters
     ----------
@@ -25,7 +25,7 @@ class ChromaStore(BaseStore):
     def __init__(
         self,
         *,
-        collection_name: str = "rag-kit-default",
+        collection_name: str = "rag-bridge-kit-default",
         persist_directory: str | None = None,
     ) -> None:
         try:
@@ -33,7 +33,7 @@ class ChromaStore(BaseStore):
         except ImportError as exc:
             raise DependencyError(
                 "chromadb is required for ChromaStore. "
-                "Install with: pip install rag-kit[chromadb]"
+                "Install with: pip install rag-bridge-kit[chromadb]"
             ) from exc
 
         try:

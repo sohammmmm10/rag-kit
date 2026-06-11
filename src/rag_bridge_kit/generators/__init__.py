@@ -1,4 +1,4 @@
-"""Answer generators for rag-kit."""
+"""Answer generators for rag-bridge-kit."""
 
 from .base import BaseGenerator
 from .default_generator import DefaultGenerator

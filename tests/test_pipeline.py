@@ -1,11 +1,11 @@
-"""Tests for rag_kit.pipeline (RAGPipeline)."""
+"""Tests for rag_bridge_kit.pipeline (RAGPipeline)."""
 
 import pytest
 
-from rag_kit import RAGPipeline, Document, ValidationError
-from rag_kit.chunkers import FixedChunker, SentenceChunker
-from rag_kit.embedders import DefaultEmbedder
-from rag_kit.stores import MemoryStore
+from rag_bridge_kit import RAGPipeline, Document, ValidationError
+from rag_bridge_kit.chunkers import FixedChunker, SentenceChunker
+from rag_bridge_kit.embedders import DefaultEmbedder
+from rag_bridge_kit.stores import MemoryStore
 
 
 @pytest.fixture

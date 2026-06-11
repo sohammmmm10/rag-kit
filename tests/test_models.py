@@ -1,6 +1,6 @@
-"""Tests for rag_kit.models."""
+"""Tests for rag_bridge_kit.models."""
 
-from rag_kit.models import Chunk, Document, EmbeddedChunk, RetrievedChunk
+from rag_bridge_kit.models import Chunk, Document, EmbeddedChunk, RetrievedChunk
 
 
 def test_document_auto_id() -> None:

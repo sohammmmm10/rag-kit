@@ -1,6 +1,6 @@
-"""rag-kit quickstart example — works with zero configuration."""
+"""rag-kit quickstart example â€” works with zero configuration."""
 
-from rag_kit import RAGPipeline
+from rag_bridge_kit import RAGPipeline
 
 # Create a pipeline with all defaults (no API keys needed!)
 pipeline = RAGPipeline()

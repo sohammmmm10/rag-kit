@@ -9,7 +9,7 @@ from .base import BaseEmbedder
 class SentenceTransformerEmbedder(BaseEmbedder):
     """Generate embeddings using a local SentenceTransformers model.
 
-    Requires: ``pip install rag-kit[sentence-transformers]``
+    Requires: ``pip install rag-bridge-kit[sentence-transformers]``
 
     Parameters
     ----------
@@ -33,7 +33,7 @@ class SentenceTransformerEmbedder(BaseEmbedder):
         except ImportError as exc:
             raise DependencyError(
                 "sentence-transformers is required for SentenceTransformerEmbedder. "
-                "Install with: pip install rag-kit[sentence-transformers]"
+                "Install with: pip install rag-bridge-kit[sentence-transformers]"
             ) from exc
 
         self._model_name = model_name

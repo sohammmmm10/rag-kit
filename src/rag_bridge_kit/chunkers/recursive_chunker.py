@@ -104,7 +104,7 @@ class RecursiveChunker(BaseChunker):
                 sub_chunks = self._split_text(piece_stripped, remaining_separators)
                 final_chunks.extend(sub_chunks)
             else:
-                # Can't split further — force add
+                # Can't split further â€” force add
                 if good_splits:
                     final_chunks.extend(self._merge_splits(good_splits, separator))
                     good_splits = []

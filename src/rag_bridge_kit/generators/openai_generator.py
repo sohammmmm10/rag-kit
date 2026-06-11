@@ -21,7 +21,7 @@ _DEFAULT_USER_TEMPLATE = (
 class OpenAIGenerator(BaseGenerator):
     """Generate answers using OpenAI's chat completion API.
 
-    Requires: ``pip install rag-kit[openai]``
+    Requires: ``pip install rag-bridge-kit[openai]``
 
     Parameters
     ----------
@@ -54,7 +54,7 @@ class OpenAIGenerator(BaseGenerator):
         except ImportError as exc:
             raise DependencyError(
                 "openai is required for OpenAIGenerator. "
-                "Install with: pip install rag-kit[openai]"
+                "Install with: pip install rag-bridge-kit[openai]"
             ) from exc
 
         self._client = openai.OpenAI(api_key=api_key)

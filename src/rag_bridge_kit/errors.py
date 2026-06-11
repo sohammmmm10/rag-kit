@@ -1,8 +1,8 @@
-"""Custom exceptions for rag-kit."""
+"""Custom exceptions for rag-bridge-kit."""
 
 
 class RagKitError(Exception):
-    """Base exception for rag-kit."""
+    """Base exception for rag-bridge-kit."""
 
 
 class LoaderError(RagKitError):

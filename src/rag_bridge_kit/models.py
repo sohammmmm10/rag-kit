@@ -1,4 +1,4 @@
-"""Core data models for rag-kit."""
+"""Core data models for rag-bridge-kit."""
 
 from __future__ import annotations
 

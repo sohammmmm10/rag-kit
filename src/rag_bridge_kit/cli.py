@@ -1,4 +1,4 @@
-"""Command-line interface for rag-kit."""
+"""Command-line interface for rag-bridge-kit."""
 
 from __future__ import annotations
 
@@ -40,7 +40,7 @@ def _cmd_query(args: argparse.Namespace) -> None:
 def _cmd_info(args: argparse.Namespace) -> None:
     from . import __version__
 
-    print(f"rag-kit v{__version__}")
+    print(f"rag-bridge-kit v{__version__}")
     print()
     print("Components:")
     print("  Loaders:    TextLoader, PDFLoader, CSVLoader, MarkdownLoader")
@@ -53,8 +53,8 @@ def _cmd_info(args: argparse.Namespace) -> None:
 
 def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(
-        prog="rag-kit",
-        description="rag-kit: Plug-and-play RAG pipeline CLI",
+        prog="rag-bridge-kit",
+        description="rag-bridge-kit: Plug-and-play RAG pipeline CLI",
     )
     sub = parser.add_subparsers(dest="command")
 
@@ -71,7 +71,7 @@ def main(argv: list[str] | None = None) -> None:
     query_parser.add_argument("--glob", default="*.txt", help="Glob pattern for files")
 
     # --- info ---
-    sub.add_parser("info", help="Show rag-kit information")
+    sub.add_parser("info", help="Show rag-bridge-kit information")
 
     args = parser.parse_args(argv)
 

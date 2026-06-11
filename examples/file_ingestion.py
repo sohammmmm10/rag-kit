@@ -2,9 +2,9 @@
 
 from pathlib import Path
 
-from rag_kit import RAGPipeline
-from rag_kit.loaders import TextLoader, MarkdownLoader
-from rag_kit.chunkers import RecursiveChunker
+from rag_bridge_kit import RAGPipeline
+from rag_bridge_kit.loaders import TextLoader, MarkdownLoader
+from rag_bridge_kit.chunkers import RecursiveChunker
 
 # --- Load text files ---
 # Change this path to your own docs directory

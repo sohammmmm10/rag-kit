@@ -8,7 +8,7 @@ from ..errors import ValidationError
 from ..models import Chunk, Document
 from .base import BaseChunker
 
-# Simple sentence boundary regex — handles ., !, ? followed by space or end.
+# Simple sentence boundary regex â€” handles ., !, ? followed by space or end.
 _SENTENCE_RE = re.compile(r"(?<=[.!?])\s+")
 
 

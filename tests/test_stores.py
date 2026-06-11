@@ -1,9 +1,9 @@
-"""Tests for rag_kit vector stores."""
+"""Tests for rag_bridge_kit vector stores."""
 
 import pytest
 
-from rag_kit.models import Chunk, EmbeddedChunk
-from rag_kit.stores import MemoryStore
+from rag_bridge_kit.models import Chunk, EmbeddedChunk
+from rag_bridge_kit.stores import MemoryStore
 
 
 @pytest.fixture

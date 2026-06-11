@@ -1,4 +1,4 @@
-"""Configuration for rag-kit."""
+"""Configuration for rag-bridge-kit."""
 
 from __future__ import annotations
 
@@ -20,7 +20,7 @@ def _as_float(value: str | None, *, default: float) -> float:
 
 @dataclass
 class RagKitSettings:
-    """Global settings for rag-kit."""
+    """Global settings for rag-bridge-kit."""
 
     # Chunking defaults
     chunk_size: int = 512

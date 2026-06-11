@@ -1,4 +1,4 @@
-"""Vector stores for rag-kit."""
+"""Vector stores for rag-bridge-kit."""
 
 from .base import BaseStore
 from .chroma_store import ChromaStore
